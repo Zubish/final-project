@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="app-title">
+        <div>
+          <p class="eyebrow">Mini Productivity App</p>
+          <h1 id="app-title">FocusFlow</h1>
+          <p class="hero-copy">
+            Plan your day, mark progress, and keep your tasks saved in the browser.
+          </p>
+        </div>
+        <div class="stats" aria-label="Task summary">
+          <span><strong id="total-count">0</strong>Total</span>
+          <span><strong id="done-count">0</strong>Done</span>
+          <span><strong id="open-count">0</strong>Open</span>
+        </div>
+      </section>
+
+      <section class="task-panel" aria-label="Todo controls">
+        <form id="task-form" class="task-form">
+          <label for="task-input">New task</label>
+          <div class="task-input-row">
+            <input
+              id="task-input"
+              name="task"
+              type="text"
+              placeholder="Add a task..."
+              autocomplete="off"
+              maxlength="80"
+              required
+            />
+            <button type="submit">Add</button>
+          </div>
+        </form>
+
+        <div class="toolbar" aria-label="Task filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="open">Open</button>
+          <button class="filter-button" type="button" data-filter="done">Done</button>
+          <button id="clear-done" class="ghost-button" type="button">Clear Done</button>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+        <p id="empty-state" class="empty-state">
+          No tasks yet. Add your first task to get started.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
